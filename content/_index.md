@@ -2,6 +2,8 @@
 
 <img class="avatar" src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Default&eyebrowType=UpDown&mouthType=Smile&skinColor=Light' alt="avatar">
 
+Foo
+
 I'm a software engineer and a writer. I write about software engineering, technology, and life. I'm currently working at [**@**](https://its.engineerings/ "ITS")[**ITS**](https://twitter.com/ "Twitter") as a software engineer. I'm also a co-founder of [**@**](https://twitter.com/ "Twitter")[**The Startup**](https://twitter.com/ "Twitter"), a community of software engineers and entrepreneurs.
 
 Hey, I'm Maverick - a minimal template. Maverick is a minimal Hugo blog theme base on Listed by Ronalds Vilciņš.
