@@ -11,5 +11,5 @@ But recently I’ve come to use a better term for what I do: Software Artisan.
 An artisan is a craftsman who makes things by hand, and I really love it!
 
 - ❤️ Github: https://github.com/robyconte
-
-Thanks in advance
+- 🐦 Twitter: https://twitter.com/robyconte
+- 📷 Instagram: https://instagram.com/contesmarrito

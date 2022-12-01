@@ -26,10 +26,10 @@ paginate = 3
     lineAnchors = ''
     lineNoStart = 1
     lineNos = false
-    lineNumbersInTable = true
+    lineNumbersInTable = false
     noClasses = true
     noHl = false
-    style = 'monokailight'
+    style = 'friendly'
     tabWidth = 4
 
 [taxonomies]
@@ -48,3 +48,4 @@ paginate = 3
   baseName = "feed"
 
 ignoreErrors = ["error-remote-getjson"]
+googleAnalytics = "G-9L4NWVLY6Y"
