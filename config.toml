@@ -3,10 +3,12 @@ languageCode = 'en-us'
 title = 'Roberto Conte Rosito'
 theme = 'maverick'
 paginate = 3
+disqusShortname = "robertoconterosito"
+
 [params]
   logo = '/assets/favicon.ico'
   description = "Just another software dev"
-  disqusShortname = "robertoconterosito"
+
 
 [menu]
   [[menu.main]]
