@@ -6,6 +6,7 @@ paginate = 3
 [params]
   logo = '/assets/favicon.ico'
   description = "Just another software dev"
+  disqusShortname = "robertoconterosito"
 
 [menu]
   [[menu.main]]
@@ -29,7 +30,7 @@ paginate = 3
     lineNumbersInTable = false
     noClasses = true
     noHl = false
-    style = 'friendly'
+    style = 'nord'
     tabWidth = 4
 
 [taxonomies]
