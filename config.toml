@@ -4,6 +4,7 @@ title = 'Roberto Conte Rosito'
 theme = 'maverick'
 paginate = 3
 disqusShortname = "robertoconterosito-it"
+googleAnalytics = "G-9L4NWVLY6Y"
 
 [params]
   logo = '/assets/favicon.ico'
