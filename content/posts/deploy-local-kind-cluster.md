@@ -4,7 +4,7 @@ title: "Deploy a local kind cluster"
 date: "2022-12-19"
 description: "This guide will help you throught the process of deploying a local kind cluster"
 tags: [
-	"kind",
+  "kind",
   "kind-cluster",
   "kubernetes",
   "k8s"
@@ -31,14 +31,20 @@ Create a kind config file called `kind-config.yaml` with the following content:
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
-  - role: control-plane
-    extraPortMappings:
-      - containerPort: 30080
-        hostPort: 80
-        protocol: TCP
-      - containerPort: 30443
-        hostPort: 443
-        protocol: TCP
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
 ```
 
 Then create the cluster using the following command:
