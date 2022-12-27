@@ -33,7 +33,7 @@ googleAnalytics = "G-9L4NWVLY6Y"
     lineNumbersInTable = false
     noClasses = true
     noHl = false
-    style = 'nord'
+    style = 'vs'
     tabWidth = 4
 
 [taxonomies]
