@@ -4,12 +4,11 @@ title: "Deploy a .net app on a local kind cluster"
 date: "2022-12-20"
 description: "How to deploy a .Net app on a local kind cluster"
 tags: ["kind", "kind-cluster", "kubernetes", "k8s", "net-app"]
-published: true
 ---
 
 This guide will help you throught the process of deploying a .Net app on a local [kind](https://kind.sigs.k8s.io/) cluster. I was just curious to see how it works and I decided to write an article about it (after studying the correct way to do it).
 
-# Prerequisites
+## Prerequisites
 
 This guide assumes you have alreay installed:
 
@@ -28,7 +27,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/mast
 
 And you are ready to go!
 
-# Create a .Net app
+## Create a .Net app
 
 I've created a github repo with a simple .Net app that will be deployed on the kind cluster. You can find it [here](https://github.com/RoBYCoNTe/hello-world-k8s-net). The app is a simple web api that returns a string or interact with files (to test my understanding of volumes).
 
@@ -48,7 +47,7 @@ curl http://localhost:5000/v1
 curl http://localhost:5000/v1/files/append?line=Hello
 ```
 
-# Create a Dockerfile
+## Create a Dockerfile
 
 Using kubernetes we can deploy a containerized application. To do that we need to create a Dockerfile that will be used to build the image that will be deployed on the cluster.
 
@@ -66,7 +65,7 @@ Then build the image by running the following command:
 docker build -t <your-docker-hub-username>/hello-world-k8s-net:latest .
 ```
 
-# Push the image to Docker Hub
+## Push the image to Docker Hub
 
 To push the image to Docker Hub run the following command:
 
@@ -74,7 +73,7 @@ To push the image to Docker Hub run the following command:
 docker push <your-docker-hub-username>/hello-world-k8s-net:latest
 ```
 
-# Deployment
+## Deployment
 
 Now that we have the image ready we can create a deployment that will deploy the image on the cluster. Before creating the deployment you have to instruct your cluster to pull the image from Docker Hub. To do that run the following command:
 
@@ -112,7 +111,7 @@ kubectl apply -f k8s/ingress.yaml
 
 **Remember** to change the host in the ingress file with your own host and to add the host to your `/etc/hosts` file (if you are using linux) or to your `hosts` file (if you are using windows).
 
-# Test the app
+## Test the app
 
 To test the app run the following commands:
 
@@ -138,7 +137,7 @@ kubectl rollout restart deployment hello-world-k8s-net
 
 Executing the curl command again will return the same result!
 
-# Conclusion
+## Conclusion
 
 This guide was just a way to test how volumes work on a local kind cluster. I've learned that volumes are not deleted when you delete a pod or when you restart the cluster. Furthermore I've learned that you can use a secret to pull an image from Docker Hub. I've to says that first tries were not successful because I was using a wrong secret, missing to install ingress-nginx, missing to create PVC and so on. I've learned that you have to read the error messages and try to understand what is going on. Most of the time the error messages are pretty clear and you can understand what is going on, if not you can always ask for help on the internet.
 

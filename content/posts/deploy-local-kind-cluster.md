@@ -4,14 +4,13 @@ title: "Deploy a local kind cluster"
 date: "2022-12-19"
 description: "This guide will help you throught the process of deploying a local kind cluster"
 tags: ["kind", "kind-cluster", "kubernetes", "k8s"]
-published: true
 ---
 
 This guide will help you throught the process of deploying a local [kind](https://kind.sigs.k8s.io/) cluster.
 
 > Kind is a tool for running local Kubernetes clusters using Docker container “nodes”. Kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI.
 
-# Prerequisites
+## Prerequisites
 
 This guide assumes you have alreay installed:
 
@@ -19,7 +18,7 @@ This guide assumes you have alreay installed:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
 
-# Create a cluster
+## Create a cluster
 
 Create a kind config file called `kind-config.yaml` with the following content:
 
@@ -51,7 +50,7 @@ kind create cluster --config kind-config.yaml
 
 The configured cluster is ready to accept requests on port 80 and 443.
 
-# Install ingress controller
+## Install ingress controller
 
 By default k8s does not have an ingress controller installed. To install the ingress controller run the following command:
 
@@ -61,7 +60,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/mast
 
 This will install the **nginx** ingress controller in the cluster (the most used ingress controller right now, but you can install many other, the only thing you have to do is to change the `ingressClassName` in your ingress resources).
 
-# Test the cluster
+## Test the cluster
 
 To test the cluster you can create a simple deployment and a service:
 

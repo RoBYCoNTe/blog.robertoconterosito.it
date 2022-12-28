@@ -8,14 +8,13 @@ tags: [
 	"boostrapp-italia-design-kit",
 	"nextjs"
 ]
-published: true
 ---
 
 This guide will help you throught the process of configuring [bootstrap-italia](https://github.com/italia/bootstrap-italia/) in your NextJS app
 
 > During this process you will probably face errors related to unrecognized static assets (csv, svg, fonts etc.) that can be solved quite simply in NextJS app using specific webpack config and NextJS components.
 
-# Install Bootstrap-Italia
+## Install Bootstrap-Italia
 
 First of all, install bootstrap-italia in your NextJS app:
 
@@ -23,7 +22,7 @@ First of all, install bootstrap-italia in your NextJS app:
 npm i -S bootstrap-italia
 ```
 
-# Configure Webpack
+## Configure Webpack
 
 Now you have to install a plugin, `copy-webpack-plugin`, required to move static assets from the `node_modules` folder (boostrap-italia) in to the project build folder using webpack:
 
@@ -56,7 +55,7 @@ Next time you run your app you will see a new folder, inside public, called boot
 
 You can choose to copy these files statically executing a Copy/Paste operation but I prefer this solution to automatically include updates when necessary (when the bootstrap-italia package will be updated).
 
-# Configure \_app.js
+## Configure \_app.js
 
 Import basic CSS globally in \_app.js adding this code on top of the file:
 
@@ -69,7 +68,7 @@ const App = ({ Component, pageProps }) => {
 export default App;
 ```
 
-# Configure Script TAG
+## Configure Script TAG
 
 Supposing you have a common set of elements necessary to display your page and there exists a file called Layout where all the UX logic starts, you have to add a link to the javascript bundle required by bootstrap-italia to work correctly with you project, like in the example below:
 
