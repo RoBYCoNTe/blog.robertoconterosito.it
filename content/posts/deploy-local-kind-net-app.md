@@ -4,6 +4,7 @@ title: "Deploy a .net app on a local kind cluster"
 date: "2022-12-20"
 description: "How to deploy a .Net app on a local kind cluster"
 tags: ["kind", "kind-cluster", "kubernetes", "k8s", "net-app"]
+published: true
 ---
 
 This guide will help you throught the process of deploying a .Net app on a local [kind](https://kind.sigs.k8s.io/) cluster. I was just curious to see how it works and I decided to write an article about it (after studying the correct way to do it).

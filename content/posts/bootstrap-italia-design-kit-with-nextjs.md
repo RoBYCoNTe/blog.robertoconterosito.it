@@ -8,6 +8,7 @@ tags: [
 	"boostrapp-italia-design-kit",
 	"nextjs"
 ]
+published: true
 ---
 
 This guide will help you throught the process of configuring [bootstrap-italia](https://github.com/italia/bootstrap-italia/) in your NextJS app
