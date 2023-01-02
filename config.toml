@@ -14,7 +14,7 @@ googleAnalytics = "G-9L4NWVLY6Y"
 [menu]
   [[menu.main]]
     identifier = "posts"
-    name = "Post"
+    name = "Posts"
     url = "/posts/"
     weight = -200
 
