@@ -1,7 +1,7 @@
 ---
 author: "Roberto Conte Rosito"
 title: "Publish superset dashboard on React/NextJS apps"
-date: "2023-01-01"
+date: "2023-01-02"
 description: "Publish and embed superset dashboard on React/NextJS apps easy and fast"
 tags: [
 	"superset",
