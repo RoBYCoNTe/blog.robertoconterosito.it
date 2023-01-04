@@ -67,14 +67,14 @@ Superset comes out with a default NPM plugin, @superset-ui/embedded-sdk, that he
 Install the package:
 
 ```bash
-npm i -S superset-dashboard
+npm i -S superset-dashboard-sdk
 ```
 
 To publish a dashboard you need to create a new data provider, this is a class that will be used to fetch data from superset. The data provider is a class that extends `DefaultDataProvider` and it's used to fetch data from superset. The `DefaultDataProvider` class is a wrapper of `SupersetClient` class that comes out with `@superset-ui/embedded-sdk` package.
 
 ```jsx
 // dataProvider.js
-import { DefaultDataProvider } from 'superset-dashboard';
+import { DefaultDataProvider } from 'superset-dashboard-sdk';
 const dp = new DefaultDataProvider("http://localhost:8088", {
   username: "guest"
   password: "guest"
@@ -86,7 +86,7 @@ Then you can use the data provider to publish your dashboard:
 
 ```jsx
 // index.js
-import { Dashboard } from "superset-dashboard";
+import { Dashboard } from "superset-dashboard-sdk";
 import dataProvider from "./dataProvider";
 const App = () => <Dashboard dataProvider={dp} id="<id of dashboard>" />;
 ```
