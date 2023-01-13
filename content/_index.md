@@ -1,6 +1,6 @@
 ## Hi there! 👋
 
-<img class="avatar" src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Blue03&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light' alt="avatar">
+<img class="avatar" src='https://media.licdn.com/dms/image/D4D03AQF0U07i_LWEkQ/profile-displayphoto-shrink_800_800/0/1673611386419?e=1678924800&v=beta&t=ggHfNxnMddkhXlfEdeG6ovaEC3btaI1l-rpZDWIsDUk' alt="avatar">
 
 I’ve been a Software Engineer, a Software Architect, a Software Developer, a Software Development Manager, a Principle Engineer, on and on. For a long time, it bugged me, and I was very confused about my real position in this world!
 
