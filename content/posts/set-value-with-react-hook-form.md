@@ -11,7 +11,8 @@ tags: [
 ]
 ---
 
-My dev notes about how to set value with React Hook Form.
+_My dev notes about how to set value with React Hook Form._
+
 Following the [official documentation](https://react-hook-form.com/api/useform/setvalue)
 you can set a value with React Hook Form using the `setValue` method to change
 it programmatically like this:
