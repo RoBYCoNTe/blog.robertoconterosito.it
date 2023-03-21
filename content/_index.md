@@ -1,6 +1,6 @@
 ## Hi there, I'm Roberto! 👋
 
-<img class="avatar" src='https://media.licdn.com/dms/image/D4D03AQF0U07i_LWEkQ/profile-displayphoto-shrink_800_800/0/1673611386419?e=1678924800&v=beta&t=ggHfNxnMddkhXlfEdeG6ovaEC3btaI1l-rpZDWIsDUk' alt="avatar">
+<img class="avatar" src='https://pbs.twimg.com/profile_images/1615809157050863634/whELVic7_400x400.jpg' alt="avatar">
 
 I’ve been a Software Engineer, a Software Architect, a Software Developer, a Software Development Manager, a Principle Engineer, on and on. For a long time, it bugged me, and I was very confused about my real position in this world!
 
