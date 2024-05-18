@@ -18,8 +18,8 @@ I guys, too much time is passed since my last post, but I'm back with a new one.
 
 This problem is really annoying, and I spent a lot of time trying to solve it. The problem is that sometimes the aggregation doesn't work as expected, and you don't know why. The real problem is that I've created a suite of tests that cover all the possible cases, but sometimes the aggregation _still_ doesn't work as expected.
 
-I was in trouble but after hours of debugging I remembered that I faced the same problem in the past and it took me a lot of time to solve it too (and this is way I've turned on my blog to write about it).
-But stop talking, get to the point!
+I was in trouble but after hours of debugging I remembered that I faced the same problem in the past and it took me a lot of time to solve it too (which is way I've turned on my blog to write about it).
+But let's stop talking, and get to the point!
 
 Suppose you have something like that in your spring boot application:
 
@@ -33,11 +33,11 @@ var aggregation = newAggregation(
 var result = mongoTemplate.aggregate(aggregation, "collection", YourClass.class).getMappedResults();
 ```
 
-Sometimes, and I still don't know why, this aggregation doesn't work as expected. The problem is that the `result` list is empty. You can try to change the aggregation in many ways, I can guarantee that I've tried any kind of operation, the problem is still there, waiting for you to solve it.
+Sometimes, and I still don't know why, this aggregation doesn't work as expected. The problem is that the `result` list is empty. You can try to change the aggregation in many ways, and I can guarantee that I've tried every kind of operation, but the problem is still there, waiting for you to solve it.
 
 You can try to get the result of aggregation in debug mode, copy it in to your MongoDB Compass instance, try to execute it **and guess what?** It works! **But in your application no, it doesn't work.**
 
-The solution is quite simple, but it took me a lot of time to find it. The problem is that the `mongoTemplate` is not able to work with the name of the collection as string (I suppose it's a bug but I've to investigate, for now is my reponsability to share what I know with you).
+The solution is quite simple, but it took me a lot of time to find it. The problem is that the `mongoTemplate` is not able to work with the name of the collection as a string (I suppose it's a bug but I have to investigate, for now it's my reponsability to share what I know with you).
 
 This line of code is wrong (or to be more precise, **sometimes** is wrong):
 
