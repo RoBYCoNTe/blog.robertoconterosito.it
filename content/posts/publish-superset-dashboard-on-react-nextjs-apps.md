@@ -90,7 +90,12 @@ Then you can use the data provider to publish your dashboard:
 import { Dashboard } from 'superset-dashboard-sdk';
 import dataProvider from './dataProvider';
 
-const App = () => <Dashboard dataProvider={dataProvider} id="<dashboard-id>" />;
+const App = () => (
+  <Dashboard
+    dataProvider={dataProvider}
+    id="<dashboard-id>"
+  />
+);
 ```
 
 To obtain a valid dashboard ID, open Superset, navigate to the dashboard, and click on the "..." menu in the top-right corner. Then select **Enable Embedding** to generate and view the UUID associated with the selected dashboard. Also remember to add the **Guest** account to the list of dashboard owners to avoid permission issues.

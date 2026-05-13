@@ -26,7 +26,9 @@ var aggregation = newAggregation(
   group("field").count().as("count"),
   project("count").and("field").previousOperation()
 );
-var result = mongoTemplate.aggregate(aggregation, "collection", YourClass.class).getMappedResults();
+var result = mongoTemplate
+    .aggregate(aggregation, "collection", YourClass.class)
+    .getMappedResults();
 ```
 
 Occasionally, and for reasons yet unclear to me, this aggregation fails, resulting in an empty `result` list. Despite numerous attempts to modify the aggregation query—I can assure you I've explored every possible operation—the problem persists. What's more perplexing is that if you extract the aggregation pipeline from debug mode and execute it directly in MongoDB Compass, it works perfectly. However, within the Spring Boot application, it consistently fails.
@@ -36,13 +38,17 @@ The solution, though seemingly simple in retrospect, was elusive. The issue appe
 The problematic line of code is (or, more precisely, *sometimes* is):
 
 ```java
-var result = mongoTemplate.aggregate(aggregation, "collection", YourClass.class).getMappedResults();
+var result = mongoTemplate
+    .aggregate(aggregation, "collection", YourClass.class)
+    .getMappedResults();
 ```
 
 To ensure the aggregation executes as reliably as it does natively in MongoDB, you should pass the class instance instead of the collection name. My practice is to ensure proper collection name resolution, but specifically for this aggregation issue, the following direct approach with the class instance is crucial:
 
 ```java
-var result = mongoTemplate.aggregate(aggregation, YourClass.class, YourClass.class).getMappedResults();
+var result = mongoTemplate
+    .aggregate(aggregation, YourClass.class, YourClass.class)
+    .getMappedResults();
 ```
 
 This signature, while similar to the previous one, differs by providing the class instance directly for the collection parameter. This ensures `mongoTemplate` correctly processes the aggregation.

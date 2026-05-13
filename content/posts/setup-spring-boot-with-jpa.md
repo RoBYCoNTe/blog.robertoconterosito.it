@@ -57,7 +57,8 @@ public class User {
 
 ```java
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {}
+public interface UserRepository
+    extends JpaRepository<User, Long> {}
 ```
 
 Now you are ready to `@Autowired` your repository and use it in your services or controllers.

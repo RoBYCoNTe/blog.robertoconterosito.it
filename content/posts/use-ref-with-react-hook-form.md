@@ -25,7 +25,11 @@ const handleClick = useCallback(() => {
 }, [fileInputRef]);
 return (
   <>
-    <input type="file" ref={fileInputRef} {...register("file")} />
+    <input
+      type="file"
+      ref={fileInputRef}
+      {...register("file")}
+    />
     <button onClick={handleClick}>Upload</button>
   </>
 );

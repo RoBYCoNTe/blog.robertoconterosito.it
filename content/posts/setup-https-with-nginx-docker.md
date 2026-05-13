@@ -44,7 +44,8 @@ server {
 If you want to avoid browser warnings, you can also add the certificate to your system keychain. On macOS, you can do it like this:
 
 ```bash
-sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain localhost.crt
+sudo security add-trusted-cert -d -r trustRoot \
+  -k /Library/Keychains/System.keychain localhost.crt
 ```
 
 Enjoy!

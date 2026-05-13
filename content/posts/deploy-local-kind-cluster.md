@@ -55,7 +55,9 @@ The configured cluster is ready to accept requests on ports 80 and 443.
 By default, Kubernetes does not have an ingress controller installed. To install the ingress controller, run the following command:
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
+kubectl apply -f \
+  https://raw.githubusercontent.com/kubernetes/\
+ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
 ```
 
 This will install the **nginx** ingress controller in the cluster. It is one of the most widely used ingress controllers, but you can install others by changing the `ingressClassName` in your ingress resources.

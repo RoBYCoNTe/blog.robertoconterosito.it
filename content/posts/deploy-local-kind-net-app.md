@@ -22,7 +22,9 @@ You can follow the guide
 
 ```bash
 kind create cluster --config kind/config.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
+kubectl apply -f \
+  https://raw.githubusercontent.com/kubernetes/\
+ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
 ```
 
 And you're ready to go!
@@ -62,7 +64,8 @@ docker login
 Then build the image by running the following command:
 
 ```bash
-docker build -t <your-docker-hub-username>/hello-world-k8s-net:latest .
+docker build \
+  -t <your-docker-hub-username>/hello-world-k8s-net:latest .
 ```
 
 ## Push the Image to Docker Hub
@@ -78,7 +81,11 @@ docker push <your-docker-hub-username>/hello-world-k8s-net:latest
 Now that we have the image ready, we can create a deployment that will deploy the image on the cluster. Before creating the deployment, you have to instruct your cluster to pull the image from Docker Hub. To do that, run the following command:
 
 ```bash
-kubectl create secret docker-registry dockerhub --docker-server=https://index.docker.io/v1/ --docker-username=<your-docker-hub-username> --docker-password=<your-docker-hub-password> --docker-email=<your-docker-hub-email>
+kubectl create secret docker-registry dockerhub \
+  --docker-server=https://index.docker.io/v1/ \
+  --docker-username=<your-docker-hub-username> \
+  --docker-password=<your-docker-hub-password> \
+  --docker-email=<your-docker-hub-email>
 ```
 
 With the previous command, we created a secret that the deployment will use to pull the image from Docker Hub. For more information about how to configure a secret for pulling an image from Docker Hub, you can read [this](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) article.
@@ -124,7 +131,8 @@ You should see the classic "Hello World!" message.
 I was just curious to see how volumes work on a local kind cluster. To test it run the following commands:
 
 ```bash
-curl -H "Host: hello-world-k8s-net.local" http://localhost/v1/files/append?line=Hello
+curl -H "Host: hello-world-k8s-net.local" \
+  http://localhost/v1/files/append?line=Hello
 ```
 
 If you execute the previous command multiple times, you will see that the file is updated with the new line. Furthermore, if you delete the pod or restart the cluster, the file will still be there.

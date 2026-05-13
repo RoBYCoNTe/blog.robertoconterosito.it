@@ -37,9 +37,14 @@ const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 // Prepare from/to
 const from = "node_modules/bootstrap-italia/dist/";
-const to = path.join(__dirname, "./public/bootstrap-italia/dist");
+const to = path.join(
+  __dirname,
+  "./public/bootstrap-italia/dist"
+);
 const nextConfig = {
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+  webpack: (config, {
+    buildId, dev, isServer, defaultLoaders, webpack
+  }) => {
     config.plugins.push(
       new CopyPlugin({
         patterns: [{ from, to }],
@@ -80,7 +85,9 @@ const Layout = ({ children }) => (
   <div>
     <Header />
     {children}
-    <Script src="bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js" />
+    <Script
+      src="bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js"
+    />
   </div>
 );
 export default Layout;
