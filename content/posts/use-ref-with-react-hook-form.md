@@ -1,8 +1,8 @@
 ---
 author: "Roberto Conte Rosito"
-title: "How to use useRef with React Hook Form"
+title: "How to Use useRef with React Hook Form for File Inputs"
 date: "2023-01-30"
-description: "Handle refs with React Hook Form"
+description: "Properly handling refs with React Hook Form, especially for file inputs."
 tags: [
 	"reactjs",
 	"react-hook-form",
@@ -11,12 +11,11 @@ tags: [
 ]
 ---
 
-_Welcome back to my dev notes!_
+Welcome back to my development notes!
 
-Today I was in trouble for a while because I wanted to use a ref inside a React-Hook-Form form
-with an input of type `file` and I couldn't do it.
+Recently, I encountered a challenge while trying to integrate a `useRef` with a React Hook Form, specifically for an input of type `file`. The direct approach I initially attempted did not work as expected.
 
-The problem was quite simple, suppose you have a form like this:
+Consider a form structure like this:
 
 ```jsx
 const { register } = useFormContext();
@@ -32,7 +31,9 @@ return (
 );
 ```
 
-And guess what? It didn't work. The `fileInputRef` was `null` inside the `handleClick` function and I couldn't understand why. After googling for a while I found the solution: you have to use the `register` method in a different way to make it work:
+In this scenario, `fileInputRef` remained `null` within the `handleClick` function, preventing the desired interaction. After some research, I discovered that the `register` method from React Hook Form needs to be handled differently when combining it with a `useRef`.
+
+The correct approach involves destructuring the `ref` property from the `register` method's return value and then assigning both the `useRef` and the `register`'s `ref` to the input element. Here's the corrected implementation:
 
 ```jsx
 const { register } = useFormContext();
@@ -57,6 +58,8 @@ return (
 );
 ```
 
-I hope this will help you if you are in trouble with refs and React Hook Form.
+By passing a function to the `ref` prop of the `input` element, we can ensure that both `fileInputRef.current` and React Hook Form's internal `ref` are correctly assigned.
 
-**Notes**: this is a dev note, not a tutorial. If you want to learn more about React Hook Form, check out the [official documentation](https://react-hook-form.com/).
+I hope this solution proves helpful if you face similar issues with refs and React Hook Form.
+
+**Note**: This is a development note, not a comprehensive tutorial. For more in-depth information on React Hook Form, please refer to the [official documentation](https://react-hook-form.com/).

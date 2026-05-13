@@ -1,8 +1,8 @@
 ---
 author: "Roberto Conte Rosito"
-title: "How to use setValue with React Hook Form"
+title: "How to Use setValue with React Hook Form"
 date: "2023-01-18"
-description: "Don't loose your mind inside a React Hook Form form"
+description: "Avoid confusion when working with setValue in React Hook Form."
 tags: [
 	"reactjs",
 	"react-hook-form",
@@ -11,9 +11,9 @@ tags: [
 ]
 ---
 
-_My dev notes about how to set value with React Hook Form._
+_My dev notes about how to use `setValue` with React Hook Form._
 
-Following the [official documentation](https://react-hook-form.com/api/useform/setvalue)
+Following the [official documentation](https://react-hook-form.com/api/useform/setvalue),
 you can set a value with React Hook Form using the `setValue` method to change
 it programmatically like this:
 
@@ -26,7 +26,7 @@ setValue("firstName", "bill");
 **But this is wrong!**
 
 You have to use the `setValue` method to change the value of a field programmatically,
-**but only** using the `useFormContext` hook instead of the `useForm` hook:
+**but only** by using the `useFormContext` hook instead of the `useForm` hook:
 
 ```jsx
 const { setValue } = useFormContext();
@@ -35,5 +35,5 @@ const { setValue } = useFormContext();
 setValue("firstName", "bill");
 ```
 
-**Remember:** the first one is used during initialization of the form,
+**Remember:** the first one is used during form initialization,
 the second one is used inside the form.

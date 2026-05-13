@@ -1,8 +1,8 @@
 ---
 author: "Roberto Conte Rosito"
-title: "Bootstrap-Italia Design Kit with NextJS app"
+title: "Bootstrap Italia Design Kit with Next.js"
 date: "2022-11-05"
-description: "This guide will help you throught the process of configuring bootstrap-italia in your NextJS app"
+description: "Configure Bootstrap Italia in a Next.js app."
 tags: [
 	"bootstrap-italia",
 	"boostrapp-italia-design-kit",
@@ -10,13 +10,13 @@ tags: [
 ]
 ---
 
-This guide will help you throught the process of configuring [bootstrap-italia](https://github.com/italia/bootstrap-italia/) in your NextJS app
+This guide will help you through the process of configuring [Bootstrap Italia](https://github.com/italia/bootstrap-italia/) in your Next.js app.
 
-> During this process you will probably face errors related to unrecognized static assets (csv, svg, fonts etc.) that can be solved quite simply in NextJS app using specific webpack config and NextJS components.
+> During this process, you will probably face errors related to unrecognized static assets (CSV, SVG, fonts, etc.) that can usually be solved in a Next.js app using a specific webpack configuration and Next.js components.
 
 ## Install Bootstrap-Italia
 
-First of all, install bootstrap-italia in your NextJS app:
+First of all, install Bootstrap Italia in your Next.js app:
 
 ```bash
 npm i -S bootstrap-italia
@@ -24,13 +24,13 @@ npm i -S bootstrap-italia
 
 ## Configure Webpack
 
-Now you have to install a plugin, `copy-webpack-plugin`, required to move static assets from the `node_modules` folder (boostrap-italia) in to the project build folder using webpack:
+Now you have to install a plugin, `copy-webpack-plugin`, required to move static assets from the `node_modules` folder (`bootstrap-italia`) into the project build folder using webpack:
 
 ```bash
 npm i --save-dev copy-webpack-plugin
 ```
 
-This will install a new plugin that we have to use inside our next.config.js:
+This will install a new plugin that we have to use inside our `next.config.js`:
 
 ```jsx
 const CopyPlugin = require("copy-webpack-plugin");
@@ -51,13 +51,13 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
-Next time you run your app you will see a new folder, inside public, called bootstrap-italia with all assets required to work with NextJS app.
+The next time you run your app, you will see a new folder inside `public` called `bootstrap-italia`, with all the assets required to work with a Next.js app.
 
-You can choose to copy these files statically executing a Copy/Paste operation but I prefer this solution to automatically include updates when necessary (when the bootstrap-italia package will be updated).
+You can choose to copy these files statically by using a copy-and-paste operation, but I prefer this solution because it automatically includes updates when the `bootstrap-italia` package is updated.
 
-## Configure \_app.js
+## Configure `\_app.js`
 
-Import basic CSS globally in \_app.js adding this code on top of the file:
+Import the base CSS globally in `\_app.js` by adding this code at the top of the file:
 
 ```jsx
 import "bootstrap-italia/dist/css/bootstrap-italia.min.css";
@@ -68,9 +68,9 @@ const App = ({ Component, pageProps }) => {
 export default App;
 ```
 
-## Configure Script TAG
+## Configure Script Tag
 
-Supposing you have a common set of elements necessary to display your page and there exists a file called Layout where all the UX logic starts, you have to add a link to the javascript bundle required by bootstrap-italia to work correctly with you project, like in the example below:
+Suppose you have a common set of elements needed to display your page, and there is a file called `Layout` where all the UX logic starts. In that case, you have to add a link to the JavaScript bundle required by Bootstrap Italia to work correctly with your project, as in the example below:
 
 ```jsx
 import Header from "./Header";
@@ -86,4 +86,4 @@ const Layout = ({ children }) => (
 export default Layout;
 ```
 
-Now you are ready to see a running NextJS app with bootstrap-italia UX.
+Now you are ready to see a running Next.js app with Bootstrap Italia UX.
