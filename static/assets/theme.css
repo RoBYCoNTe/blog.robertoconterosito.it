@@ -1,0 +1,53 @@
+/* Light mode (default) */
+:root {
+  --color-bg: hsla(93, 0%, 96%, 1.00);
+  --color-fg: #000;
+  --color-code-bg: #e0e0e0;
+  --color-meta: #777;
+  --color-border: #eee;
+  --color-hr: #ccc;
+  --color-skip-bg: #eee;
+  --color-nav: #000;
+}
+
+/* Dark mode */
+html[data-theme="dark"] {
+  --color-bg: #18181b;
+  --color-fg: #e4e4e7;
+  --color-code-bg: #27272a;
+  --color-meta: #a1a1aa;
+  --color-border: #3f3f46;
+  --color-hr: #3f3f46;
+  --color-skip-bg: #27272a;
+  --color-nav: #e4e4e7;
+}
+
+/* Apply variables */
+body { background: var(--color-bg); color: var(--color-fg); }
+code, pre { background: var(--color-code-bg); }
+.meta { color: var(--color-meta); }
+blockquote { border-left-color: var(--color-border); }
+.hr-list { border-bottom-color: var(--color-hr); }
+.skip-link { background: var(--color-skip-bg); }
+.nav { background: var(--color-nav); }
+
+/* Code block overrides */
+.highlight { border-radius: 6px; overflow: hidden; margin: .375rem 0; }
+.highlight pre { margin: 0; padding: .75rem 1rem; overflow-x: auto; }
+.highlight code { background: transparent; margin: 0; }
+.chroma .line:last-child .cl .w:last-child { line-height: 0; }
+html[data-theme="dark"] .chroma { background-color: #282a36 !important; }
+pre code { font-size: .875rem !important; }
+
+/* Toggle button */
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 0 0 .75rem;
+  color: var(--color-fg);
+  line-height: 2;
+  vertical-align: middle;
+}
+#theme-toggle:hover { opacity: .7; }
