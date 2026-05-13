@@ -1,14 +1,12 @@
 ## Hi there, I'm Roberto! 👋
 
-<img class="avatar" src='https://pbs.twimg.com/profile_images/1615809157050863634/whELVic7_400x400.jpg' alt="avatar">
+<img class="avatar" src='/assets/avatar.jpeg' alt="avatar">
 
-I’ve been a Software Engineer, a Software Architect, a Software Developer, a Software Development Manager, a Principle Engineer, on and on. For a long time, it bugged me, and I was very confused about my real position in this world!
+With over 20 years of hands-on experience in the technology sector, my career has evolved through almost every pivotal role: from Software Engineer and Architect to Development Manager and Principal Engineer.
 
-What I did was what I was. I’ve loved designing and coding software since I got my first access to a machine compiler; loved it on my Olivetti 386 using Visual Basic, learning thewonders of modules and first pseudo OOP vbs classes; loved in through the Shareware Years of DOS; and still I love it today with .net and any technology that falls into my hands (java, php etc.).
+My journey began in the early 90s on an Olivetti 386 — from mastering the first pseudo-OOP classes in Visual Basic and the DOS shareware era, to architecting modern distributed systems with .NET, Java, and PHP. Through it all, my approach has remained consistent: I am a **Software Artisan**. I believe in the craft of building software with the precision and care of a traditional craftsman, regardless of the stack.
 
-But recently I’ve come to use a better term for what I do: Software Artisan.
-
-An artisan is a craftsman who makes things by hand, and I really love it!
+In an era increasingly defined by Artificial Intelligence, I remain committed to technical excellence and architectural integrity — while keeping a pragmatic eye on the future. I've even set a long-term personal goal: transitioning to _Future Farmer_. Until the day comes to trade my IDE for an orchard, I'll keep building robust, human-centric software solutions — and perhaps keep a tractor manual or two on the shelf for the next great pivot.
 
 - ❤️ Github: https://github.com/robyconte
 - 🐦 Twitter: https://twitter.com/robyconte
