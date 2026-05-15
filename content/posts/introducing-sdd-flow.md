@@ -23,10 +23,10 @@ SDD Flow was born to address those problems: it coordinates the steps (extract S
 What it does, in practice
 
 - Orchestration: defines a pipeline of steps that turn the Story into verifiable outputs (for example, tests, API descriptions, or code snippets).
-- Reproducibility: captures inputs (Story snapshot, agent/tool versions, parameters) so a proposal can be regenerated and compared.
+-
 - Audit trail: every mutation is linked to the Story fragment that produced it, so you can reconstruct why a change happened.
 - Human control: places a review gate where I accept, edit, or discard the proposal before the final commit.
-- Integrations: designed to work with different assistants/agents and the sdd repository (see the sdd-flow folder on GitHub: [sdd-flow folder](https://github.com/applica-software-guru/sdd/tree/main/sdd-flow)), and with the project homepage: [sdd.applica.guru](https://sdd.applica.guru)
+- Integrations: designed to work with different assistants/agents and the SDD Flow repository (see [applica-software-guru/sdd-flow on GitHub](https://github.com/applica-software-guru/sdd-flow)), and with the project homepage: [sdd.applica.guru](https://sdd.applica.guru)
 
 Origin of the project
 
@@ -38,7 +38,7 @@ It helps anyone who wants to experiment with development agents without losing h
 
 Where to find the code and details
 
-The source code for SDD Flow is available in the sdd repository under the sdd-flow folder: [sdd-flow on GitHub](https://github.com/applica-software-guru/sdd/tree/main/sdd-flow). For public-facing info and documentation visit the project page: [sdd.applica.guru](https://sdd.applica.guru)
+The source code for SDD Flow is available in its own repository: [applica-software-guru/sdd-flow on GitHub](https://github.com/applica-software-guru/sdd-flow). For public-facing info and documentation visit the project page: [sdd.applica.guru](https://sdd.applica.guru)
 
 Try it and give feedback
 
