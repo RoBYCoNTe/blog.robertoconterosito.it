@@ -23,7 +23,6 @@ SDD Flow was born to address those problems: it coordinates the steps (extract S
 What it does, in practice
 
 - Orchestration: defines a pipeline of steps that turn the Story into verifiable outputs (for example, tests, API descriptions, or code snippets).
--
 - Audit trail: every mutation is linked to the Story fragment that produced it, so you can reconstruct why a change happened.
 - Human control: places a review gate where I accept, edit, or discard the proposal before the final commit.
 - Integrations: designed to work with different assistants/agents and the SDD Flow repository (see [applica-software-guru/sdd-flow on GitHub](https://github.com/applica-software-guru/sdd-flow)), and with the project homepage: [sdd.applica.guru](https://sdd.applica.guru)
