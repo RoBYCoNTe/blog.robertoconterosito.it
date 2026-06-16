@@ -1,6 +1,6 @@
 ---
 title: "Cleaning up large SDD projects: sdd compact and sdd preflight"
-date: 2026-06-16T10:00:00+00:00
+date: "2026-06-16"
 description: "After a few months of real use, the change-requests/ and bugs/ folders in an SDD project become a graveyard of closed work. Two small commands shipped in 1.9.1 and 1.9.2 bring them back to a sane size."
 tags:
   - sdd
