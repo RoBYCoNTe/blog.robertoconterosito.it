@@ -8,6 +8,9 @@
   --color-hr: #ccc;
   --color-skip-bg: #eee;
   --color-nav: #000;
+  /* table header: same value the theme already uses for --color-border
+     and --color-skip-bg, so no new shade is introduced */
+  --color-th-bg: #eee;
 }
 
 /* Dark mode */
@@ -20,6 +23,9 @@ html[data-theme="dark"] {
   --color-hr: #3f3f46;
   --color-skip-bg: #27272a;
   --color-nav: #e4e4e7;
+  /* table header: same value the theme already uses for --color-code-bg
+     and --color-skip-bg */
+  --color-th-bg: #27272a;
 }
 
 /* Apply variables */
@@ -51,3 +57,88 @@ pre code { font-size: .875rem !important; }
   vertical-align: middle;
 }
 #theme-toggle:hover { opacity: .7; }
+
+/* Tables: global on purpose, no class needed, so every table in every post
+   (past and future) gets the same style. Radius matches .highlight. */
+table {
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5rem 0;
+  border: 1px solid var(--color-hr);
+  border-radius: 6px;
+  /* a radius is ignored with collapsed borders: keep them separate and draw
+     the inner grid from the cells instead */
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  font-size: .9375rem;
+  line-height: 1.45;
+}
+
+caption {
+  margin-bottom: .5rem;
+  color: var(--color-meta);
+  font-size: .875rem;
+  text-align: left;
+}
+
+th,
+td {
+  padding: .55rem .75rem;
+  border: 0;
+  border-bottom: 1px solid var(--color-hr);
+  border-right: 1px solid var(--color-hr);
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+
+/* the frame draws the outer edge, so trailing inner borders go away */
+table tr > *:last-child { border-right: 0; }
+table tr:last-child > th,
+table tr:last-child > td { border-bottom: 0; }
+
+thead th {
+  background: var(--color-th-bg);
+  font-weight: 600;
+}
+
+tfoot tr:first-child > td {
+  border-top: 1px solid var(--color-hr);
+  font-weight: 600;
+}
+
+/* keep the header band inside the rounded corners */
+thead tr:first-child > th:first-child { border-top-left-radius: 5px; }
+thead tr:first-child > th:last-child { border-top-right-radius: 5px; }
+table tr:last-child > *:first-child { border-bottom-left-radius: 5px; }
+table tr:last-child > *:last-child { border-bottom-right-radius: 5px; }
+
+/* no zebra striping on purpose: it forced a fourth grey next to the page,
+   the border and the header, and the four were almost indistinguishable */
+
+/* model names and versions should not break mid-token */
+td code,
+th code {
+  white-space: nowrap;
+}
+
+/* syntax highlighting can emit a table when line numbers sit in one:
+   keep this style away from it */
+.highlight table,
+.highlight th,
+.highlight td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+
+/* let wide tables scroll instead of squeezing on small screens */
+@media (max-width: 700px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

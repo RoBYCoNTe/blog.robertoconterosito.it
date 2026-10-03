@@ -17,8 +17,21 @@
     {{ $styles := resources.Get "scss/styles.scss" | toCSS (dict "outputStyle" "compressed") | minify }}
     {{ $styles_extra := resources.Get "scss/_extra.scss" | toCSS (dict "outputStyle" "compressed") | minify }}
     <style>{{ $styles.Content | safeCSS }} {{ $styles_extra.Content | safeCSS }}</style>
-    <link rel="stylesheet" href="/assets/syntax.css">
-    <link rel="stylesheet" href="/assets/theme.css">
+    {{/* Cache busting without the asset pipeline: the files stay in static/, so
+        Hugo always publishes them, and the `?v=` value changes only when the
+        file does. A fixed URL would let browsers and the CDN serve a stale copy
+        for up to ten minutes. Guarded, so a missing file warns instead of
+        failing the build. */}}
+    {{ if os.FileExists "static/assets/syntax.css" }}
+    <link rel="stylesheet" href="/assets/syntax.css?v={{ substr (md5 (readFile "static/assets/syntax.css")) 0 8 }}">
+    {{ else }}
+    {{ warnf "static/assets/syntax.css not found: code highlighting will be unstyled" }}
+    {{ end }}
+    {{ if os.FileExists "static/assets/theme.css" }}
+    <link rel="stylesheet" href="/assets/theme.css?v={{ substr (md5 (readFile "static/assets/theme.css")) 0 8 }}">
+    {{ else }}
+    {{ warnf "static/assets/theme.css not found: site styling will be missing" }}
+    {{ end }}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
         body { font-family: "Inter", sans-serif; }
